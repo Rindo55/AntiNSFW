@@ -5,7 +5,7 @@ from aiohttp import ClientSession
 from pyrogram import Client
 from Python_ARQ import ARQ
 
-SESSION_NAME = "spr"
+SESSION_NAME = "spa"
 DB_NAME = "db.sqlite3"
 API_ID = 6
 API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
