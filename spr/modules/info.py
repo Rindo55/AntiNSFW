@@ -23,18 +23,12 @@ or you can use inline mode >>
 
 
 async def get_user_info(user):
-    try:
-        user = await spr.get_users(user)
-    except Exception:
-        return
-    if not user_exists(user.id):
-        add_user(user.id)
-    trust = get_user_trust(user.id)
-    blacklisted = is_user_blacklisted(user.id)
-    reason = None
-    if blacklisted:
-        reason, time = get_blacklist_event(user.id)
-    data = f"""
+        trust = get_user_trust(user.id)
+        blacklisted = is_user_blacklisted(user.id)
+        reason = None
+        if blacklisted:
+            reason, time = get_blacklist_event(user.id)
+        data = f"""
 **ID:** {user.id}
 **DC:** {user.dc_id}
 **Username:** {user.username}
@@ -48,12 +42,12 @@ async def get_user_info(user):
 **Potential Spammer:** {True if trust < 70 else False}
 **Blacklisted:** {blacklisted}
 """
-    data += (
-        f"**Blacklist Reason:** {reason} | {ctime(time)}"
-        if reason
-        else ""
-    )
-    return data
+        data += (
+            f"**Blacklist Reason:** {reason} | {ctime(time)}"
+            if reason
+            else ""
+        )
+        return data
 
 
 async def get_chat_info(chat):
