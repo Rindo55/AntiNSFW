@@ -95,11 +95,8 @@ async def get_info(entity):
 
 @spr.on_message(filters.command("info"), group=3)
 async def info_func(_, message: Message):
-    if message.reply_to_message:
-        reply = message.reply_to_message
-        user = reply.from_user
-        entity = user.id or message.chat.id
-    elif len(message.command) == 1:
+    
+    if len(message.command) == 1:
         user = message.from_user
         entity = user.id or message.chat.id
     elif len(message.command) == 2:
