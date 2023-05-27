@@ -36,7 +36,53 @@ async def get_user_info(message):
     )
     return data
 
+async def get_user_infox(message):
 
+    user = message.from_user
+
+    trust = get_user_trust(user.id)
+
+    user_ = f"{('@' + user.username) if user.username else user.mention} [`{user.id}`]"
+
+    blacklisted = is_user_blacklisted(user.id)
+
+    reason = None
+
+    if blacklisted:
+
+        reason, time = get_blacklist_event(user.id)
+
+    data = f"""
+
+**User:**
+
+    **Username:** {user_}
+
+    **Trust:** {trust}
+
+    **Spammer:** {True if trust < 50 else False}
+
+    **Reputation:** {get_reputation(user.id)}
+
+    **NSFW Count:** {get_nsfw_count(user.id)}
+
+    **Potential Spammer:** {True if trust < 70 else False}
+
+    **Blacklisted:** {is_user_blacklisted(user.id)}
+
+"""
+
+    data += (
+
+        f"    **Blacklist Reason:** {reason} | {ctime(time)}"
+
+        if reason
+
+        else ""
+
+    )
+
+    await message.reply_text(data)
 async def delete_get_info(message: Message):
     try:
         await message.delete()
