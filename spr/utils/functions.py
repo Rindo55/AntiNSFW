@@ -62,7 +62,6 @@ async def get_user_infox(message):
     **DC:** {user.dc_id}
     **Username:** {user_}
     **Status:** {user.status}
-    **Telegram Premium**: {user.is_premium}
     
     **Trust:** {trust}
     **Spammer:** {True if trust < 50 else False}
