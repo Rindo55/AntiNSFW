@@ -24,7 +24,7 @@ async def get_user_info(message):
     **ID:** {user.id} 
     **DC:** {user.dc_id}
     **Username:** {user_}
-    **Status:** {user.status)
+    **Status:** {user.status}
     **Telegram Premium**: {user.is_premium}
     
     **Trust:** {trust}
