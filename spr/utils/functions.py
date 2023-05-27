@@ -60,8 +60,9 @@ async def get_user_infox(message):
 **User:**
     **ID:** {user.id} 
     **DC:** {user.dc_id}
-    **Username:** {user_}
+    **Username:** {user.username}
     **Status:** {user.status}
+    **Last Online Date**: {user.last_online_date}
     
     **Trust:** {trust}
     **Spammer:** {True if trust < 50 else False}
