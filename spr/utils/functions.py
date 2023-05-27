@@ -21,7 +21,12 @@ async def get_user_info(message):
         reason, time = get_blacklist_event(user.id)
     data = f"""
 **User:**
+    **ID:** {user.id} 
+    **DC:** {user.dc_id}
     **Username:** {user_}
+    **Status:** {user.status)
+    **Telegram Premium**: {user.is_premium}
+    
     **Trust:** {trust}
     **Spammer:** {True if trust < 50 else False}
     **Reputation:** {get_reputation(user.id)}
@@ -55,19 +60,12 @@ async def get_user_infox(message):
     data = f"""
 
 **User:**
-
     **Username:** {user_}
-
     **Trust:** {trust}
-
-    **Spammer:** {True if trust < 50 else False}
-
+    **Spammer:** {True if trust < 50 else False
     **Reputation:** {get_reputation(user.id)}
-
     **NSFW Count:** {get_nsfw_count(user.id)}
-
     **Potential Spammer:** {True if trust < 70 else False}
-
     **Blacklisted:** {is_user_blacklisted(user.id)}
 
 """
