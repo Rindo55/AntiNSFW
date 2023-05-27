@@ -61,7 +61,7 @@ async def get_user_infox(user, message):
     **Last Name:** {user.last_name}
     **ID:** `{user.id}` 
     **DC:** `{user.dc_id}`
-    **Username:** {user.username}
+    **Username:** '@' + {user.username}
     **Status:** {user.status}
 
     **Trust:** {trust}
