@@ -108,7 +108,7 @@ async def info_func(_, message: Message):
         return await message.reply_text("Read the help menu")
     entity = await get_info(entity)
     entity = entity or "I haven't seen this chat/user."
-    await get_user_infox(message)
+    await get_user_infox(user)
 
 
 @spr.on_inline_query()
