@@ -65,7 +65,7 @@ async def get_user_infox(message):
     **Telegram Premium**: {user.is_premium}
     
     **Trust:** {trust}
-    **Spammer:** {True if trust < 50 else False
+    **Spammer:** {True if trust < 50 else False}
     **Reputation:** {get_reputation(user.id)}
     **NSFW Count:** {get_nsfw_count(user.id)}
     **Potential Spammer:** {True if trust < 70 else False}
