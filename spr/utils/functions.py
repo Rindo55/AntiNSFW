@@ -57,12 +57,13 @@ async def get_user_infox(user, message):
     data = f"""
 
 **User:**
-    **ID:** {user.id} 
-    **DC:** {user.dc_id}
+    **First Name:** {user.first_name}
+    **Last Name:** {user.last_name}
+    **ID:** `{user.id}` 
+    **DC:** `{user.dc_id}`
     **Username:** {user.username}
     **Status:** {user.status}
-    **Last Online Date**: {user.last_online_date}
-    
+
     **Trust:** {trust}
     **Spammer:** {True if trust < 50 else False}
     **Reputation:** {get_reputation(user.id)}
