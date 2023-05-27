@@ -5,6 +5,7 @@ from pyrogram.types import (InlineQuery, InlineQueryResultArticle,
                             InputTextMessageContent, Message)
 
 from spr import SUDOERS, spr
+from spr.utils.functions get_user_infox
 from spr.utils.db import (add_chat, add_user, chat_exists,
                           get_blacklist_event, get_nsfw_count,
                           get_reputation, get_user_trust,
@@ -107,7 +108,7 @@ async def info_func(_, message: Message):
         return await message.reply_text("Read the help menu")
     entity = await get_info(entity)
     entity = entity or "I haven't seen this chat/user."
-    await message.reply_text(entity)
+    await get_user_infox(message)
 
 
 @spr.on_inline_query()
