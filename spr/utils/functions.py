@@ -24,9 +24,7 @@ async def get_user_info(message):
     **ID:** {user.id} 
     **DC:** {user.dc_id}
     **Username:** {user_}
-    **Status:** {user.status}
-    **Telegram Premium**: {user.is_premium}
-    
+  
     **Trust:** {trust}
     **Spammer:** {True if trust < 50 else False}
     **Reputation:** {get_reputation(user.id)}
@@ -60,7 +58,12 @@ async def get_user_infox(message):
     data = f"""
 
 **User:**
+    **ID:** {user.id} 
+    **DC:** {user.dc_id}
     **Username:** {user_}
+    **Status:** {user.status}
+    **Telegram Premium**: {user.is_premium}
+    
     **Trust:** {trust}
     **Spammer:** {True if trust < 50 else False
     **Reputation:** {get_reputation(user.id)}
