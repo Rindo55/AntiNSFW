@@ -39,7 +39,7 @@ async def get_user_info(message):
     )
     return data
 
-async def get_user_infox(user):
+async def get_user_infox(user, message):
 
 
     trust = get_user_trust(user.id)
